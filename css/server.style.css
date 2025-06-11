@@ -1,0 +1,979 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {box-sizing: border-box;}
+
+/* Important Variables */
+
+:root {
+    --main-color: #2b2f4d;
+    --logo-size: 50px;
+
+    --title-size: 25px;
+    --font-size: 16px;
+
+    --h2-size: 32px;
+    --content-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: Kanit;
+    margin-bottom: 50px;
+}
+
+/* Logo & NavBar */
+
+.logo {
+    width: var(--logo-size);
+    height: auto;
+}
+
+.title {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    font-weight: 500;
+    font-size: var(--title-size);
+    color: white;
+}
+
+nav {
+    width: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 5px 0;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+nav div:last-child {
+    margin: 0 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-size: var(--font-size)
+}
+
+nav a::after {
+    content: "";
+    width: 0;
+    background-color: white;
+    bottom: 0px;
+    height: 0.1em;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: all 0.3s;
+}
+
+nav a:hover::after {
+    width: 95%;
+}
+
+nav p {
+    margin: 0 15px;
+}
+
+.login-button, .account-button {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: black;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button::after, .account-button::after {
+    bottom: 4.5px;
+}
+
+.login-button:hover, .account-button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.login-button:hover::after, .account-button:hover::after {
+    width: 85%;
+}
+
+/* Body Content */
+
+h2 {
+    text-transform: capitalize;
+    font-size: var(--h2-size);
+}
+
+h2, p {
+    margin: 10px 30px 0 30px;
+}
+
+.content {
+    max-width: 1000px;
+    font-size: var(--content-size);
+}
+
+.card-holder {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 20px 0 20px;
+    gap: 10px;
+}
+
+.card {
+    background-color: var(--main-color);
+    display: flex;
+    margin: 0;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+.card h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card img {
+    width: 15%;
+    margin: 10px;
+}
+
+/* Login Form */
+
+label {
+    font-size: var(--font-size);
+}
+
+.login-form {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main-color);
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.login-form div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form label {
+    color: white;
+}
+
+.login-form input[type=text], .login-form input[type=password], .login-form input[type=email] {
+    all: unset;
+    display: block;
+    border: 1px solid white;
+    border-radius: 25px;
+    font-size: var(--font-size);
+    padding: 5px;
+    margin: 5px 0;
+    color: white;
+}
+
+.login-form input[type=submit] {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin: 5px 0;
+    font-size: var(--font-size);
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-form input[type=submit]:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.login-form p {
+    color: white;
+    text-align: center;
+}
+
+.login-form a {
+    text-decoration: underline;
+    color: white;
+}
+
+.login-form ::placeholder {
+    color: rgb(211, 211, 211);
+    opacity: 1; /* Firefox */
+}
+
+/* Dashboard Styling */
+
+#tip a {
+    all: unset;
+    color: var(--main-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#tip a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-container {
+    margin: 10px 30px 0 30px;
+}
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-buttons a, .user-buttons button {
+    all: unset;
+    color: white;
+    font-size: var(--font-size);
+    background-color: var(--main-color);
+    padding: 8px;
+    border-radius: 25px;
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-buttons a:hover, .user-buttons button:hover {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+.account-button img {
+    height: calc(var(--font-size) + 4px);
+    width: calc(var(--font-size) + 4px);
+    margin-right: 5px;
+    background-color: var(--main-color);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 3px;
+    transition: border 0.3s;
+}
+
+.account-button {
+    display: flex;
+    align-items: center;
+}
+
+.account-button:hover img {
+    border: 1px solid white;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+}
+
+.user-card img {
+    height: auto;
+    width: 100px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.user-card p, h2 {
+    margin: 0 0 0 15px;
+}
+
+/* Badge Styling */
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 250px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.badge img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.badge-textt {
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #333;
+    width: 160px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display:none;
+}
+.badge-text :hover {
+    display:block;
+}
+
+/* Capsule Container */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.capsule-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.capsule-card {
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    width: 33%;
+    transition: all 0.3s;
+    opacity: 0;
+    animation: slideIn 0.6s forwards;
+}
+
+.capsule-row:first-of-type {
+    margin-bottom: 3px;
+    border-bottom: 1px solid white;
+}
+
+.capsule-card .delete-button {
+    all: unset;
+    color: rgb(231, 90, 90);
+    font-size: var(--content-size);
+    cursor: pointer;
+    font-weight: 800;
+    transition: all 0.3s;
+}
+
+.capsule-card .delete-button:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+.capsule-card .delete-button:active {
+    transform: scale(0.95);
+}
+
+.capsule-card p, .capsule-card h4 {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: var(--content-size);
+    user-select: none;
+}
+
+.capsule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+/* Upload Form */
+
+.setup-form {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    width: 40%;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.setup-form input[type=text] {
+    all: unset;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    color: black;
+    text-transform: capitalize;
+    margin: 0;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    transition: all 0.3s;
+}
+
+.setup-form input[type=text]:focus {
+    border-bottom: 1px solid gray;
+}
+
+.setup-form input[type=submit], input[type=button] {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    font-size: var(--font-size);
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.setup-form input[type=submit]:hover, input[type=button]:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.setup-form input[type=date], .setup-form input[type=time] {
+    all: unset;
+    width: 100%;
+    font-size: var(--font-size);
+    text-align: center;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    appearance: none;
+    user-select: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.setup-form input[type=file] {
+    display: none;
+}
+
+.setup-form p {
+    font-size: var(--font-size);
+    text-align: center;
+}
+
+.setup-form h4 {
+    margin: 10px 30px 0 30px;
+    size: 18px;
+    color: var(--main-color);
+}
+
+.setup-form input[type=file] {
+    margin: 10px 30px 0 30px;
+}
+
+.setup-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    column-gap: 5px;
+    width: 100%;
+}
+
+.file-display {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 15vh;
+    max-height: 30vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background-color: white;
+    padding: 5px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 5px;
+}
+
+.file-display p {
+    color: black;
+}
+
+.file {
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    text-align: left !important;
+    margin: 4px;
+}
+
+.file:last-child { /* Prevent border on last child */
+    border-bottom: none;
+}
+
+.file button {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid var(--main-color);
+    padding: 4px 8px;
+    font-size: var(--content-size);
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transition: all 0.3s;
+}
+
+.file button:hover {
+    color: black;
+    background-color: transparent;
+}
+
+.file p {
+    color: black;
+    display: inline-block;
+    user-select: none;
+    cursor: pointer;
+    text-align: left !important;
+    margin: 4px;
+}
+
+.file p:last-child {
+    cursor: auto;
+}
+
+.file p:first-of-type:hover {
+    text-decoration: line-through;
+}
+
+#total {
+    margin: 0;
+}
+
+/* File Display Overlay (Drag & Drop Area) */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#fileOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 47, 77, 0.9); 
+    color: white;
+    border-radius: 10px;
+    z-index: 500;
+    pointer-events: none;
+    display: none;
+    animation: fadeIn 0.3s forwards;
+}
+
+.overlay-content {
+    border: 2px dashed white;
+    border-radius: 10px;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.overlay-content p {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: white !important;
+    margin: 0 !important;
+}
+
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 5px;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+/* Message Field */
+
+.message-modal {
+    display: none; /* Keep hidden unless triggered */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 47, 77, 0.8);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s forwards;
+}
+
+.message-modal-content {
+    background-color: var(--main-color);
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    border-radius: 10px;
+    padding: 20px 25px;
+    width: 30%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-modal-content h2 {
+    font-size: var(--h2-size);
+    margin: 0;
+    color: white;
+}
+
+.message-modal-content input[type="text"] {
+    all: unset;
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-size: var(--font-size);
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.message-modal-content button {
+    all: unset;
+    background-color: white;
+    color: black;
+    font-size: var(--font-size);
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid white;
+    width: fit-content;
+    align-self: center;
+}
+
+.message-modal-content button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.message-modal-content div {
+    display: flex;
+    gap: 5px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff6b6b;
+}
+
+/* Recipient Field */
+.recipient-modal {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    z-index: 999;
+    padding: 20px 30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.recipient-modal-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.recipient-modal-content h2 {
+    font-size: var(--h2-size);
+    margin-bottom: 10px;
+}
+
+.recipient-modal-content input[type="text"] {
+    all: unset;
+    background-color: white;
+    color: black;
+    font-size: var(--font-size);
+    padding: 10px 15px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    text-align: left; 
+}
+
+#saveRecipientButton {
+    all: unset;
+    background-color: white;
+    color: black;
+    font-size: var(--font-size);
+    font-weight: 400;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+    display: block;              
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#saveRecipientButton:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.recipient-modal .close-button {
+    display: none; /* optional: hide the X since it’s not a popup anymore */
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 800px) {
+    :root {
+        --logo-size: 30px;
+    
+        --title-size: 20px;
+        --font-size: 12px;
+
+        --h2-size: 25px;
+        --content-size: 14px;
+    }
+
+    p {
+        font-size: var(--font-size);
+    }
+
+    .card {
+        background-color: var(--main-color);
+        display: block !important;
+        width: 30%;
+        border-radius: 5px;
+        margin: 5px;
+        color: white;
+        padding: 5px;
+    }
+
+    .card h4 {
+        display: block;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .card img {
+        width: 30%;
+        display: block;
+        margin: auto;
+    }
+
+    .user-card img {
+        width: 75px;
+    }
+
+    .user-header {
+        display: block;
+    }
+    
+    .user-buttons {
+        margin: 10px 0 30px 0;
+    }
+
+    .login-form {
+        width: 75%;
+    }
+
+    .setup-form {
+        width: 75%;
+    }
+
+    .message-modal-content {
+        width: 60%;
+    }
+
+    .capsule-card {
+	width: 100%;
+    }
+}
+
+.recipient-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1e1e3f; /* DigiVault dark navy blue */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.recipient-pill button {
+    background: none;
+    border: none;
+    color: #ff5c5c; /* Light red by default */
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.recipient-pill button:hover {
+    color: #ff1c1c; /* Brighter red on hover */
+    transform: scale(1.3) rotate(15deg); /* Slightly grow and tilt the x */
+}
+
+/* Dashboard Capsule Cancel Button */
+.delete-capsule-btn {
+    background-color: #2b2b4f;           /* match nav/footer dark theme */
+    color: white;                        /* white text for visibility */
+    border: none;
+    border-radius: 8px;                  /* rounded corners like other buttons */
+    padding: 8px 14px;
+    margin-top: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.delete-capsule-btn:hover {
+    background-color: #1f1f3d;           /* slightly darker on hover */
+}
+
+/* Enhanced Badge Styling */
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    background-color: #1a1f36;  
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    max-width: 240px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 12px;
+    color: white;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+}
+
+.badge img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+}
+
+.badge .badge-content {
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+}
