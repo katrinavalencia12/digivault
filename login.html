@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>DigiVault | Home</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="ico/favicon.ico">
+    </head>
+    <body>
+    <nav>
+        <div>
+            <img src="svg/logo.svg" class="logo">
+            <h1 class="title">DigiVault</h1>
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="setup.html">Setup</a>
+            <a href="login.html" class="login-button">Sign Up / Login</a>
+        </div>
+    </nav>
+
+        <form action="upload.php" method="post" enctype="multipart/form-data" class="login-form">
+            <div>
+                <img src="svg/logo.svg" class="logo">
+                <h1 class="title">DigiVault Login</h1>
+            </div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username here.." required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password here.." required>
+            <input type="submit" value="Login">
+            <p>Not a member yet? <a href="signup.html">Sign Up</a>&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="">Forgot Password</a></p>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; Copyright 2025 by DigiVault</p>
+        </footer>
+    </body>
+</html>

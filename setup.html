@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DigiVault | Setup</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/ico/favicon.ico">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <img src="/static/svg/logo.svg" class="logo">
+            <h1 class="title">DigiVault</h1>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/setup">Setup</a>
+            {% if 'user_id' in session %}
+                <a href="/dashboard" class="account-button"><img src="/static/svg/account.svg">Account</a>
+            {% else %}
+                <a href="/login" class="login-button">Sign Up / Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- File Upload Form -->
+    <form id="uploadForm" method="post" enctype="multipart/form-data" class="setup-form">
+        <div class="file-display" id="fileDisplay">
+            <div id="fileOverlay">
+                <div class="overlay-content">
+                    <p>+</p>
+                </div>
+            </div>
+            <div id="fileHolder"></div>
+            <p id="tipText">
+                Please upload the file(s) you would like to see in the future.<br>
+                Then, select a date and upload your capsule.<br>
+                Please note the max upload size is <strong>1 GB</strong>.<br>
+                <strong>Tip:</strong> You can also add recipient emails if you want others to receive your capsule too!
+            </p>
+        </div>
+        <p id="total">0 / 1000 MB</p>
+        <div class="setup-buttons">
+            <input type="button" value="Select Files" id="fileButton">
+            <input type="file" id="files" name="files[]" multiple required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="button" id="recipientsButton" value="Add Recipients">
+            <input type="submit" value="Upload">
+        </div>
+
+        <!-- Display selected recipients -->
+        <div id="recipientList" class="recipient-list"></div>
+    </form>
+
+    <!-- Modals -->
+    <div id="messageModal" class="message-modal">
+        <div class="message-modal-content">
+            <span id="closeMessageButton" class="close-button">&times;</span>
+            <h2>Add File Message</h2>
+            <div>
+                <input type="text" placeholder="Add your message here..." id="fileMessage">
+                <button id="saveMessageButton">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="recipientModal" class="recipient-modal">
+        <div class="recipient-modal-content">
+            <span id="closeRecipientButton" class="close-button">&times;</span>
+            <h2>Add Recipient(s)</h2>
+            <div>
+                <input type="text" placeholder="Separate multiple emails with commas" id="recipients">
+                <button id="saveRecipientButton">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DigiVault. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/static/js/setup.js?v=1"></script>
+</body>
+</html>

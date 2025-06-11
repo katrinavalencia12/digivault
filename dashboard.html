@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiVault | Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/ico/favicon.ico">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <img src="/static/svg/logo.svg" class="logo">
+            <h1 class="title">DigiVault</h1>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/setup">Setup</a>
+            <a href="{{ url_for('history') }}">View History</a>
+            <a href="/dashboard" class="account-button"><img src="/static/svg/account.svg">Account</a>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- User Greeting and Action Buttons -->
+        <div class="user-header">
+            <div class="user-card">
+                <img src="/static/svg/account.svg">
+                <div>
+                    <h2>Hello, {{ username }}!</h2>
+                    <p>Here's the page where you can manage your account.</p>
+                </div>
+            </div>
+
+            <div class="user-buttons">
+                <a href="/logout" class="logout-button">Log Out</a>
+                <form action="/delete_account" method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                    <button type="submit" class="delete-button">Delete Account</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- User Info -->
+        <div>
+            <h3>Basic Information</h3>
+            <ul>
+                <li><strong>Username:</strong> {{ username }}</li>
+                <li><strong>Email:</strong> {{ email }}</li>
+            </ul>
+        </div>
+
+        <!-- Badge Display Section -->
+        <div id="badgeList">
+            <h3>Badges</h3>
+            <div id="capsuleBadge"></div>  <!-- Existing badge placeholder for 5 capsules -->
+        </div>
+
+        <!-- Capsule Display Section -->
+        <div id="capsuleDisplay">
+            <h3>Your Capsules</h3>
+            <ul id="capsuleList" class="capsule-container"></ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Copyright 2025 by DigiVault</p>
+    </footer>
+
+    <!-- Pass capsule and badge data to JS -->
+    <script>
+        const capsules = {{ capsules | tojson | safe }};
+        const capsulesUploaded = {{ capsulesUploaded | tojson | safe }};
+    </script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

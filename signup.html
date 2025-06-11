@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiVault | Sign Up</title>
+    <link rel="stylesheet" href="/static/css/style.css">  <!-- Correct path to CSS -->
+    <link rel="icon" href="/static/ico/favicon.ico">      <!-- Correct path to favicon -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <img src="/static/svg/logo.svg" class="logo">  <!-- Correct path to logo -->
+            <h1 class="title">DigiVault</h1>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/setup">Setup</a>
+            <a href="/login" class="login-button">Sign Up / Login</a>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Signup Form -->
+    <form action="/signup" method="POST" class="login-form">
+        <div>
+            <img src="/static/svg/logo.svg" class="logo">
+            <h1 class="title">DigiVault Sign Up</h1>
+        </div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username here.." required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email here.." required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password here.." required>
+        <label for="confirm_password">Re-enter Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter your password" required>
+        <p class="password-requirements">
+            Your password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, and one number.
+        </p>
+        <input type="submit" value="Sign Up">
+        <p>Already a member? <a href="/login">Log In</a></p>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Copyright 2025 by DigiVault</p>
+    </footer>
+</body>
+</html>

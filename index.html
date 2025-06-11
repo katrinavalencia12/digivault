@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiVault | Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">  <!-- Correct path to CSS -->
+    <link rel="icon" href="/static/ico/favicon.ico">      <!-- Correct path to favicon -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+<nav>
+    <div>
+        <img src="/static/svg/logo.svg" class="logo">
+        <h1 class="title">DigiVault</h1>
+    </div>
+<!-- In the navigation bar section -->
+<div>
+    <a href="/">Home</a>
+    <a href="/setup">Setup</a>
+    {% if 'user_id' in session %}
+        <a href="/dashboard" class="account-button"><img src="static/svg/account.svg">Account</a>  <!-- Changed from /logout -->
+    {% else %}
+        <a href="/login" class="login-button">Sign Up / Login</a>
+    {% endif %}
+</div>
+
+</nav>
+    <!-- Body -->
+    <h2>Our Mission:</h2>
+    <p class="content">Have you ever wished you could send a message to your future self?</p>
+    <br>
+    <p class="content">At DigiVault, we deliver a bridge between the past and the future like no other. This is the first time capsule where you can store photos, videos, and text all at once with no physical strings attached. Set it to unlock anytime from now. Unlike traditional time capsules, ours is built to last forever, accessible from anywhere, and safe from time’s wear and tear. Bless the future with today’s wisdom—using DigiVault.</p>
+
+    <h2>How to use our product:</h2>
+
+    <div class="card-holder">
+        <div class="card">
+            <img src="/static/svg/upload.svg">  <!-- Correct path to SVG -->
+            <h4>Upload Files</h4>
+        </div>
+        <div class="card">
+            <img src="/static/svg/calendar.svg">  <!-- Correct path to SVG -->
+            <h4>Select a Date</h4>
+        </div>
+        <div class="card">
+            <img src="/static/svg/checkmark.svg">  <!-- Correct path to SVG -->
+            <h4>Upload Content</h4>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Copyright 2025 by DigiVault</p>
+    </footer>
+</body>
+</html>
